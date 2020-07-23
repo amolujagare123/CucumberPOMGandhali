@@ -5,6 +5,7 @@ Feature: Hotels.com website testing
 
 
 # 1
+  @starratings
   Scenario Outline: Verify user can only view the result by selected property class
     Given I am on default locations search result screen
     When I select property class <stars>
@@ -13,7 +14,8 @@ Feature: Hotels.com website testing
       | stars   |
       | 5 stars |
       | 4 stars |
-      | 3 stars |
+
+
 
 
 #2
@@ -24,9 +26,10 @@ Feature: Hotels.com website testing
 
 
 #3
+  @dealPrice
   Scenario: Verify todays deal price value
     Given I am on default locations search result screen
-    Then I verify todays deal is less than $200
+    Then I verify todays deal is less than "7500" rs
 
 #4
   Scenario Outline: Verify room count dropdown
